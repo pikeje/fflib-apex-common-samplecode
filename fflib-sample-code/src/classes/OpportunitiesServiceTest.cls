@@ -33,8 +33,8 @@ private class OpportunitiesServiceTest
 		// Create mocks
 		fflib_ApexMocks mocks = new fflib_ApexMocks();
 		fflib_ISObjectUnitOfWork uowMock = new fflib_SObjectMocks.SObjectUnitOfWork(mocks);
-		IOpportunities domainMock = new Mocks.Opportunities(mocks);
-		IOpportunitiesSelector selectorMock = new Mocks.OpportunitiesSelector(mocks);
+		Opportunities domainMock = (Opportunities)mocks.factory(Opportunities.class);
+		OpportunitiesSelector selectorMock = (OpportunitiesSelector)mocks.factory(OpportunitiesSelector.class);
 
 		// Given
 		mocks.startStubbing();
