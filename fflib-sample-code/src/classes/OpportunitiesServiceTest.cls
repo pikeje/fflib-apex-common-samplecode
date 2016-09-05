@@ -32,7 +32,7 @@ private class OpportunitiesServiceTest
 	{
 		// Create mocks
 		fflib_ApexMocks mocks = new fflib_ApexMocks();
-		fflib_ISObjectUnitOfWork uowMock = new fflib_SObjectMocks.SObjectUnitOfWork(mocks);
+		fflib_SObjectUnitOfWork uowMock = (fflib_SObjectUnitOfWork)mocks.factory(fflib_SObjectUnitOfWork.class);
 		Opportunities domainMock = (Opportunities)mocks.factory(Opportunities.class);
 		OpportunitiesSelector selectorMock = (OpportunitiesSelector)mocks.factory(OpportunitiesSelector.class);
 
