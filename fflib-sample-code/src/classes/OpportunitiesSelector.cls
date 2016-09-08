@@ -31,6 +31,12 @@ public class OpportunitiesSelector extends fflib_SObjectSelector
 	{
 		return (IOpportunitiesSelector) Application.Selector.newInstance(Opportunity.SObjectType);
 	}
+
+    public OpportunitiesSelector()
+    {
+        super();
+        System.assert(System.Test.isRunningTest(), 'Must not use 0-arg constructor outside test');
+	}
 	
 	public List<Schema.SObjectField> getSObjectFieldList()
 	{
