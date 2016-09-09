@@ -32,10 +32,10 @@ public class Opportunities extends fflib_SObjectDomain
 		return (IOpportunities) Application.Domain.newInstance(sObjectList);
 	}
 
-    public Opportunities()
-    {
-        super(new List<Opportunity>(), Opportunity.SObjectType);
-        System.assert(System.Test.isRunningTest(), 'Must not use 0-arg constructor outside test');
+	public Opportunities()
+	{
+		super(new List<Opportunity>(), Opportunity.SObjectType);
+		System.assert(System.Test.isRunningTest(), 'Must not use 0-arg constructor outside test');
 	}
 
 	public Opportunities(List<Opportunity> sObjectList)
