@@ -17,4 +17,4 @@ jobs:
 
       - uses: mcanog/setup-pmd@v1
       - name: run-pmd
-        run: pmd -d ./fflib-sample-code/src/classes -R category/apex/security.xml -f xml --failOnViolation false > report.xml
+        run: pmd -d ./fflib-sample-code/src/classes/ -R category/apex/security.xml -f xml --failOnViolation false > report.xml
