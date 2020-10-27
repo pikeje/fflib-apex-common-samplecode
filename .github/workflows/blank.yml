@@ -1,0 +1,20 @@
+name: PMD Source Code Analyzer on Push
+
+on: [push]
+
+jobs:
+  pmd:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Setup JRE
+        uses: actions/setup-java@v1
+        with:
+          java-version: '13.0.2'
+          java-package: jre
+          architecture: x64
+
+      - uses: mcanog/setup-pmd@v1
+      - name: run-pmd
+        run: pmd -d ./fflib-sample-code/src/classes -R category/apex/security.xml -f xml --failOnViolation false > report.xml
