@@ -24,7 +24,7 @@
  *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 **/
 
-public class Application 
+public with sharing class Application 
 {
 	// Configure and create the UnitOfWorkFactory for this Application
 	public static final fflib_Application.UnitOfWorkFactory UnitOfWork = 
