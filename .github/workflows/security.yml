@@ -1,0 +1,27 @@
+name: Security
+
+on: [push, pull_request]
+
+jobs:
+  pmd-scan:
+    name: PMD Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup JRE
+        uses: actions/setup-java@v1
+        with:
+          java-version: '13.0.2'
+          java-package: jre
+          architecture: x64
+
+      - uses: mcanog/setup-pmd@v1
+      - name: run-pmd
+        run: pmd -d /home/runner/work/fflib-apex-common-samplecode/fflib-apex-common-samplecode -R category/apex/security.xml -f xml --failOnViolation false > report.xml
+
+      - uses: jwgmeligmeyling/pmd-github-action@v1.2
+        with:
+          path: '**/report.xml'
+          name: 'PMD Annotation'
