@@ -12,6 +12,10 @@ jobs:
 
       - name: Setup JRE
         uses: actions/setup-java@v1.4.3
+        with:
+          java-version: '13.0.2'
+          java-package: jre
+          architecture: x64
 
       - uses: pikeje/action-pmd@main
       - name: run-pmd
