@@ -17,7 +17,7 @@ jobs:
           java-package: jre
           architecture: x64
 
-      - uses: mcanog/setup-pmd@v1
+      - uses: pikeje/action-pmd@v1.0
       - name: run-pmd
         run: pmd -d /home/runner/work/fflib-apex-common-samplecode/fflib-apex-common-samplecode -R category/apex/security.xml -f xml --failOnViolation false > report.xml
 
